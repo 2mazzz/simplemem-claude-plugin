@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simplemem-plugin"
+version = "1.0.0"
+description = "SimpleMem plugin for Claude Code providing persistent semantic memory"
+requires-python = ">=3.10"
+authors = [
+    {name = "SimpleMem Contributors"}
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4.0",
+    "pytest-mock>=3.11.0",
+    "pytest-cov>=4.1.0",
+    "pytest-timeout>=2.1.0",
+    "pytest-xdist>=3.3.0",
+    "openai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "--cov=tools",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+markers = [
+    "integration: integration tests requiring SimpleMem installation",
+    "slow: tests that take significant time to run",
+]
+timeout = 300

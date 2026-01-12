@@ -1,0 +1,22 @@
+{
+  "name": "SimpleMem-Claude-Plugin",
+  "description": "SimpleMem: Persistent memory system for conversations using semantic compression and vector search",
+  "version": "1.0.0",
+  "author": {
+    "name": "Tomas Röjder",
+    "email": "tomas.rojder@gmail.com"
+  },
+  "repository": "https://github.com/2mazzz/simplemem-claude-plugin",
+  "keywords": [
+    "memory",
+    "longterm",
+    "semantic",
+    "search",
+    "lancedb",
+    "vector"
+  ],
+  "capabilities": {
+    "skills": true,
+    "tools": true
+  }
+}
